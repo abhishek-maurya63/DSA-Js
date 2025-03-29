@@ -83,13 +83,31 @@ Q3: print the mirrored right angle triangle
 
 // Q6: Print all the prime numbers from 1 to 100
 
-for (let i = 2; i <= 100; i++) {
-  let prime = true;
-  for (let j = 2; j <= Math.sqrt(i); j++) {
-    if (i % j == 0) {
-      prime = false;
-      break;
-    }
+// for (let i = 2; i <= 100; i++) {
+//   let prime = true;
+//   for (let j = 2; j <= Math.sqrt(i); j++) {
+//     if (i % j == 0) {
+//       prime = false;
+//       break;
+//     }
+//   }
+//   if (prime == true) console.log(i);
+// }
+
+// Q7: calculatePower
+
+function calculatePower(a, b) {
+  let result = 1;
+
+  if (b == 0) {
+    return result;
   }
-  if (prime == true) console.log(i);
+
+  for (var i = 1; i <= Math.abs(b); i++) {
+    result = result * a;
+  }
+
+  return b > 0 ? result : 1 / result;
 }
+
+console.log(calculatePower(2, -3));
